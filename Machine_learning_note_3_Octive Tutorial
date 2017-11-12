@@ -1,0 +1,133 @@
+Machine_learning_note_3_Octive Tutorial
+
+> develop more quickly using high level language like octive
+
+element/logic calculation
+>> 1 + 2
+>> 1 ~= 2
+>> 1 && 0
+>> 1 || 0
+
+change display
+>> PS1('>> ');
+
+not print out the result:
+>> c = (3>=1);
+>> c %display c value
+
+print out result
+>> a = pi
+>> a
+a = 3.1416
+>> disp(a);
+3.1416
+>> disp(sprintf('2 decimals : %0.2f', a))
+% 0.2f, 表示保留两位小数
+>> disp(sprintf('6 decimls : %0.6f', a))
+% 保留6位小数
+>> format long
+>> a
+a = 3.14159255358979
+>> format short
+>> a = 3.1416
+
+matrix
+>> A = [1,2;3,4;5,6]
+or
+>> A = [1 2;3 4;5 6]
+>> C = 2*ones(2,3) %生成两排三列矩阵
+>> W = zeros(1,3)
+>> W = randn(1,3) %高斯分布取出
+
+
+column/raw vecter
+>> v = [1 2 3]
+>> v = [1; 2; 3]
+>> v = 1:0.2:2 %从1到2， 间隔0.2
+>> v = 1:6 %隔一个 
+
+画直方图：
+>> w = -5 + sqrt(10)*(randn(1,10000));
+>> hist(w)
+>> hist(w,50)% 
+
+Matrix:
+>> eye(4) #generate diagonal matrix
+>> magic(3) %create an N by N magic square, each row, each column, all diagonals sum up to the same thing.
+
+>> size(A)
+>> size(A,1)
+>> length(v)
+
+导入数据:
+>> load filename.dat
+>> load('filename.dat')
+>> who %shows the variable that octave has in memory currently
+>> whos %shows the detail information of current scope
+>> filename %shows the data imported
+>> size(filename)
+>> clear filename %clear data variable in the memory
+
+>> v = priceY(1:10) %提取前十个数据
+>> save hello.mat v; 
+>> save hello.txt v -ascii % save as text (ASCII)--readable formate
+
+manipulate data:
+>> A =[1 2; 3 4; 5 6]
+>> A(3,2)
+>> A(2,:) %":" means every element along that row/column
+
+>> A([1 3], :) %get all element form 1 and 3 row of A
+>> A(:,2) = [10; 11; 12] %take all element of 2 row and assign value to [10; 11; 12]
+>> A = [A, [100; 101; 102]]; %append another column vector to right
+	A = [A, [COLUMN VECTOR]]
+>> A(:) %put all elements of A into a single vector
+>> C = [A B] %concatenate A and B (A left, B right) same as [A,B]
+>> C = [A; B] %concatenate A and B (A top, B bottom)
+
+Computational operation of Octive
+>> A * B %matrix multiplication
+>> A.* B %corresponding element multiplication
+>> A.* 2 %same
+>> V = [1; 2; 3]
+>> 1 ./ v (v ./ 1)
+>> log(v)
+>> exp(v)
+>> abs(v)
+>> -v
+>> v + ones(length(v),1) %increment v by form 1,2,3 to 2,3,4
+>> v' %transpose of v
+>> (v')'
+
+>> a = [1 15 2 0.5]
+>> val = max(a)
+>> [val, ind] = max(a) % the max value and index of a
+>> a < 3
+1 0 1 1 ---> return the boolean value
+>> find(a < 3) % the index number where element number less than 3
+>> [r, c] = find(A >= 7)
+r for row number
+c for column value
+>> sum(a)
+>> prod(a)
+>> floor(a) %round down
+>> ceiling(a) %round up
+>> max(rand(3),rand(3))
+>> max(A,[],2) %max of 1st 2ed 3rd row
+>> max(max(A)) %max value in A
+>> max(A(:)) %same
+>> sum(A,1) %sum up each column of A
+>> sum(A,2) %sum up each row of A
+
+>>sum(sum(A.*eye(9))) % sum of all element of A
+
+
+
+
+
+
+
+
+
+
+
