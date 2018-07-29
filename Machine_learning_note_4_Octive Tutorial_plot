@@ -1,0 +1,32 @@
+Machine_learning_note_4_Octive Tutorial_plot
+
+> Plotting data:
+>> t = [0:0.01:0.98];
+>> y1 = sin(2*pi*4*t);
+>> plot(t,y1); % setenv("GNUTERM","qt") if plot didn't work
+>> y2 = cos(2*pi*4*t);
+>> hold on;
+>> plot(t,y2, 'r'); % set red
+>> xlabel('time');
+>> ylabel('value');
+>> legend('sin','cos')
+>> title('my plot')
+>> cd 'C:\Users\xuwanxin\Desktop'; print -dpng 'myplot.png'
+>> close
+
+>> figure(1); plot(t,y1);
+>> figure(2); plot(t,y2);
+
+>> subplot(1,2,1); %Divides plot a 1*2 grid, access first element
+>> plot(t,y1);
+>> axis([0.5 1 -1 1]) % x range(0.5,1), y range(-1,1)
+>> subplot(1,2,2);
+>> plot(t,y2);
+>> axis([0.5 1 -1 1])
+>> clf %used to clear figure
+
+>> A = magic(5)
+>> imagesc(A)
+>> imagesc(A), colorbar, colormap gray
+
+>> a=1, b=2, c=3 %comma chain command

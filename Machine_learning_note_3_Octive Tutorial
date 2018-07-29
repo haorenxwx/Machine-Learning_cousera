@@ -119,7 +119,15 @@ c for column value
 >> sum(A,1) %sum up each column of A
 >> sum(A,2) %sum up each row of A
 
->>sum(sum(A.*eye(9))) % sum of all element of A
+>> sum(sum(A.*eye(9))) % sum of all element of A
+>> sum(sum(A.*flipud(eye(9)))) %slipud(A)
+>> temp = pinv(A) % the pseudo inverse of A
+>> pinv(A) * A % essentially ones on the diagonals nad zeroes on the off-diagonals.
+
+
+
+
+
 
 
 
